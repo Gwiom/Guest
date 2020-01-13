@@ -44,3 +44,6 @@ jacocoTestReport {
 		csv.enabled = true
 	}
 }
+
+compileJava.dependsOn clean
+test.finalizedBy jacocoTestReport

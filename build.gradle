@@ -11,10 +11,10 @@ plugins {
     id 'java-library'
     id 'jacoco'
 }
-/*
+
 ext {
 	jacocoVersion = '0.8.5'
-}*/
+}
 
 repositories {
     // Use jcenter for resolving dependencies.
@@ -32,10 +32,10 @@ dependencies {
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
 }
-/*
+
 jacoco {
 	toolVersion = jacocoVersion
-}*/
+}
 
 jacocoTestReport {
 	reports {

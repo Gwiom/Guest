@@ -63,7 +63,7 @@ public class Library {
 		int index = (int)num-1;
 		if((factorialMemo[index] == 0)){
 			if(num == 1) factorialMemo[index] = 1;
-			else factorialMemo[index] = num*this.firstFactorial(index);
+			else factorialMemo[index] = num*firstFactorial(index);
 		}
 		return factorialMemo[index];
 	}

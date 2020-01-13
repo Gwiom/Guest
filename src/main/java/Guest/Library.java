@@ -45,7 +45,7 @@ public class Library {
 		}
 	}
 	
-	public static long firstFactorial(int num){
+	public long firstFactorial(int num){
 		if((factorialMemo[num] != 0))
 			return factorialMemo[num];
 
@@ -59,11 +59,11 @@ public class Library {
 		return factorialMemo[num];
 	}
 
-	public static long firstFactorial2(long num){
+	public long firstFactorial2(long num){
 		int index = (int)num-1;
 		if((factorialMemo[index] == 0)){
 			if(num == 1) factorialMemo[index] = 1;
-			else factorialMemo[index] = num*firstFactorial(index);
+			else factorialMemo[index] = num*this.firstFactorial(index);
 		}
 		return factorialMemo[index];
 	}
@@ -163,7 +163,7 @@ public class Library {
 		char[] strOut = str.toCharArray();
 		int combSize = strOut.length*2/3;
 		while(combSize >= 1)
-		{//broooookenbuiiiiild
+		{
 			for(int i = 0; i <strOut.length-combSize; i++){
 				char c = strOut[i];
 				int combIndex = i+combSize;
@@ -208,7 +208,7 @@ public class Library {
 		return tree.flatten();
 	}
 	
-	public static String LongestWord(String sen){
+	public String LongestWord(String sen){
 		if (sen == null || sen == "") return "";
 		
 		int startLongestPos = 0, longestLen = 0;
@@ -235,14 +235,11 @@ public class Library {
 		return sen.substring(startLongestPos, startLongestPos+longestLen);
 	}  
 
-	public static String LongestWord2(String sen){
+	public String LongestWord2(String sen){
+		if (sen == null || sen == "") return "";
 		String[] words = sen.replaceAll("[^a-zA-Z\\s+]", "").split("\\s+");
 		int longestPos = 0;
 		for (int i = 0; i < words.length; i++) if(words[longestPos].length() < words[i].length()) longestPos = i;
 		return words[longestPos];
 	}
-	
-    public boolean someLibraryMethod() {
-        return true;
-    }
 }

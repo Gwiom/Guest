@@ -28,4 +28,31 @@ public class LibraryTest {
 		buf = "yoop";
         assertTrue("someLibraryMethod should return 'true'", classUnderTest.AlphabetSoup2(buf).equals("oopy"));
     }
+    
+    @Test public void testLongestWord() {
+        Library classUnderTest = new Library();
+		assertTrue(" should return 'true'", classUnderTest.LongestWord(null).equals(""));
+		String buf = "checking the longest word there is!";
+		assertTrue(" should return 'true'", classUnderTest.LongestWord(buf).equals("checking"));
+		buf = "";
+		assertTrue(" should return 'true'", classUnderTest.LongestWord(buf).equals(""));
+		buf = "one twoo three fouuur five";
+		assertTrue(" should return 'true'", classUnderTest.LongestWord(buf).equals("fouuur"));
+		buf = "one twoo three fouuur";
+		assertTrue(" should return 'true'", classUnderTest.LongestWord(buf).equals("fouuur"));
+    }
+
+    
+    @Test public void testLongestWord2() {
+        Library classUnderTest = new Library();
+		assertTrue(" should return 'true'", classUnderTest.LongestWord2(null).equals(""));
+		String buf = "checking the longest word there is!";
+		assertTrue(" should return 'true'", classUnderTest.LongestWord2(buf).equals("checking"));
+		buf = "";
+		assertTrue(" should return 'true'", classUnderTest.LongestWord2(buf).equals(""));
+		buf = "one twoo three fouuur five";
+		assertTrue(" should return 'true'", classUnderTest.LongestWord2(buf).equals("fouuur"));
+		buf = "one twoo three fouuur";
+		assertTrue(" should return 'true'", classUnderTest.LongestWord2(buf).equals("fouuur"));
+    }
 }

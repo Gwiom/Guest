@@ -9,7 +9,12 @@
 plugins {
     // Apply the java-library plugin to add support for Java Library
     id 'java-library'
+    id 'jacoco'
 }
+/*
+ext {
+	jacocoVersion = '0.8.5'
+}*/
 
 repositories {
     // Use jcenter for resolving dependencies.
@@ -26,4 +31,16 @@ dependencies {
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+}
+/*
+jacoco {
+	toolVersion = jacocoVersion
+}*/
+
+jacocoTestReport {
+	reports {
+		xml.enabled = true
+		html.enabled = true
+		csv.enabled = true
+	}
 }
